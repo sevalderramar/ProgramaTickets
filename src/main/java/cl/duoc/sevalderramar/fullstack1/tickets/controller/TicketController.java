@@ -3,9 +3,7 @@ package cl.duoc.sevalderramar.fullstack1.tickets.controller;
 import cl.duoc.sevalderramar.fullstack1.tickets.model.Ticket;
 import cl.duoc.sevalderramar.fullstack1.tickets.service.TicketService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,13 @@ public class TicketController {
     @GetMapping
     public List<Ticket> getAllTickets(){
         return this.service.geTickets();
+    }
+    @PostMapping
+    public Ticket create(@RequestBody Ticket ticket){
+        Ticket created = this.service.create(ticket);
+        if (created != null){
+            return created;
+        }
+        return null;
     }
 }
