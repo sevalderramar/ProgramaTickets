@@ -1,8 +1,7 @@
 package cl.duoc.sevalderramar.fullstack1.tickets.controller;
 
-import cl.duoc.sevalderramar.fullstack1.tickets.model.Ticket;
+import cl.duoc.sevalderramar.fullstack1.tickets.model.TicketModel;
 import cl.duoc.sevalderramar.fullstack1.tickets.service.TicketService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,12 +17,13 @@ public class TicketController {
     }
 
     @GetMapping
-    public List<Ticket> getAllTickets(){
+    public List<TicketModel> getAllTickets(){
         return this.service.geTickets();
     }
+
     @PostMapping
-    public Ticket create(@RequestBody Ticket ticket){
-        Ticket created = this.service.create(ticket);
+    public TicketModel create(@RequestBody TicketModel ticketModel){
+        TicketModel created = this.service.create(ticketModel);
         if (created != null){
             return created;
         }

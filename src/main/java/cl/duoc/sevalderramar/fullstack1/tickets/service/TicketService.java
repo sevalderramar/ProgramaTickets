@@ -1,6 +1,6 @@
 package cl.duoc.sevalderramar.fullstack1.tickets.service;
 
-import cl.duoc.sevalderramar.fullstack1.tickets.model.Ticket;
+import cl.duoc.sevalderramar.fullstack1.tickets.model.TicketModel;
 import cl.duoc.sevalderramar.fullstack1.tickets.repository.TicketRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,24 +16,24 @@ public class TicketService {
         this.repository = repository;
     }
 
-    public List<Ticket> geTickets(){
+    public List<TicketModel> geTickets(){
         return this.repository.getAll();
     }
 
-    public Ticket create(Ticket ticket){
-        boolean exists = this.repository.existsByTitle(ticket.getTitle());
+    public TicketModel create(TicketModel ticketModel){
+        boolean exists = this.repository.existsByTitle(ticketModel.getTitle());
         if (exists) {
-            return ticket;
+            return ticketModel;
         }
         LocalDateTime now = LocalDateTime.now();
         LocalDate ldNow = LocalDate.now();
         LocalDate estimated = ldNow.plusDays(5L);
 
-        ticket.setStatus("NEW");
-        ticket.setCreatedAt(now);
-        ticket.setEstimatedResolutionDate(estimated);
-        this.repository.save(ticket);
-        return ticket;
+        ticketModel.setStatus("NEW");
+        ticketModel.setCreatedAt(now);
+        ticketModel.setEstimatedResolutionDate(estimated);
+        this.repository.save(ticketModel);
+        return ticketModel;
     }
 
 

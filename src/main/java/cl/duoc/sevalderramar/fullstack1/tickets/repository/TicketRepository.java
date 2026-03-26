@@ -1,6 +1,6 @@
 package cl.duoc.sevalderramar.fullstack1.tickets.repository;
 
-import cl.duoc.sevalderramar.fullstack1.tickets.model.Ticket;
+import cl.duoc.sevalderramar.fullstack1.tickets.model.TicketModel;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -9,20 +9,20 @@ import java.util.List;
 
 @Repository
 public class TicketRepository {
-    List<Ticket> tickets;
+    List<TicketModel> ticketModels;
 
     long currentId = 0L;
 
     public  TicketRepository() {
-        tickets = new ArrayList<>();
-        tickets.add(new Ticket(
+        ticketModels = new ArrayList<>();
+        ticketModels.add(new TicketModel(
                 currentId++,
                 "Ticket1",
                 "Ticket 1",
                 "NEW",LocalDateTime.now(),
                 null,
                 null));
-        tickets.add(new Ticket(
+        ticketModels.add(new TicketModel(
                 currentId++,
                 "Ticket1",
                 "Ticket 1",
@@ -30,18 +30,18 @@ public class TicketRepository {
                 null,
                 null));
     }
-    public List<Ticket>getAll(){
-        return tickets;
+    public List<TicketModel>getAll(){
+        return ticketModels;
     }
-    public Ticket save(Ticket newTicket){
-        newTicket.setId(currentId++);
-        tickets.add(newTicket);
-        return newTicket;
+    public TicketModel save(TicketModel newTicketModel){
+        newTicketModel.setId(currentId++);
+        ticketModels.add(newTicketModel);
+        return newTicketModel;
     }
 
     public boolean existsByTitle(String aTitle){
-        for (Ticket ticket : tickets){
-            if (ticket.getTitle().equals(aTitle)){
+        for (TicketModel ticketModel : ticketModels){
+            if (ticketModel.getTitle().equals(aTitle)){
                 return true;
             }
         }

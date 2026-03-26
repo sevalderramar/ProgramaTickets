@@ -2,6 +2,7 @@ spring:
   application:
     name: Tickets
 server:
-  port: 8081
+  port: 8080
   servlet:
     context-path: "/ticket-app"
+

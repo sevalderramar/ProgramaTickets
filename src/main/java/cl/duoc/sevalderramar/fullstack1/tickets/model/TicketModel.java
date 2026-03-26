@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Setter // setea todos los datos
 @NoArgsConstructor
 @AllArgsConstructor //Crea el constructor con los 4 parametros automaticamente
-public class Ticket {
+public class TicketModel {
     private Long id;
     private String title;
     private String description;
