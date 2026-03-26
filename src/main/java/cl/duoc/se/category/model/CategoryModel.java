@@ -1,4 +1,4 @@
-package cl.duoc.se.valderramar.fullstack1.category.model;
+package cl.duoc.se.category.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

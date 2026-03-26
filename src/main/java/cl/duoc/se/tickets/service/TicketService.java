@@ -1,7 +1,7 @@
-package cl.duoc.sevalderramar.fullstack1.tickets.service;
+package cl.duoc.se.tickets.service;
 
-import cl.duoc.sevalderramar.fullstack1.tickets.model.TicketModel;
-import cl.duoc.sevalderramar.fullstack1.tickets.repository.TicketRepository;
+import cl.duoc.se.tickets.model.TicketModel;
+import cl.duoc.se.tickets.repository.TicketRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -16,7 +16,7 @@ public class TicketService {
         this.repository = repository;
     }
 
-    public List<TicketModel> geTickets(){
+    public List<TicketModel> getTickets(){
         return this.repository.getAll();
     }
 

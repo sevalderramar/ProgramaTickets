@@ -1,7 +1,7 @@
-package cl.duoc.sevalderramar.fullstack1.tickets.controller;
+package cl.duoc.se.tickets.controller;
 
-import cl.duoc.sevalderramar.fullstack1.tickets.model.TicketModel;
-import cl.duoc.sevalderramar.fullstack1.tickets.service.TicketService;
+import cl.duoc.se.tickets.model.TicketModel;
+import cl.duoc.se.tickets.service.TicketService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class TicketController {
 
     @GetMapping
     public List<TicketModel> getAllTickets(){
-        return this.service.geTickets();
+        return this.service.getTickets();
     }
 
     @PostMapping

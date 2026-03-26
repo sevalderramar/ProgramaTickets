@@ -1,6 +1,6 @@
-package cl.duoc.sevalderramar.fullstack1.tickets.repository;
+package cl.duoc.se.tickets.repository;
 
-import cl.duoc.sevalderramar.fullstack1.tickets.model.TicketModel;
+import cl.duoc.se.tickets.model.TicketModel;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;

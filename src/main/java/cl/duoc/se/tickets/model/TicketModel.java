@@ -1,5 +1,4 @@
-package cl.duoc.sevalderramar.fullstack1.tickets.model;
-
+package cl.duoc.se.tickets.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
