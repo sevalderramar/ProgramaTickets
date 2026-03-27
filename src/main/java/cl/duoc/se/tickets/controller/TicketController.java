@@ -2,6 +2,7 @@ package cl.duoc.se.tickets.controller;
 
 import cl.duoc.se.tickets.model.TicketModel;
 import cl.duoc.se.tickets.service.TicketService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,4 +30,18 @@ public class TicketController {
         }
         return null;
     }
+
+    @GetMapping("/by-id/{id}")
+    public ResponseEntity<TicketModel> getTicketById(@PathVariable Long id){
+        TicketModel found = this.service.getById(id);
+        if (found != null){
+            return ResponseEntity.status(201).body(found);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping
+    public
+
+
 }

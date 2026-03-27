@@ -48,4 +48,12 @@ public class TicketRepository {
         return false;
     }
 
+    public TicketModel getById(Long id) {
+        for (TicketModel ticketModel : ticketModels){
+            if (ticketModel.getId().equals(id)){
+                return ticketModel;
+            }
+        }
+        return null;
+    }
 }

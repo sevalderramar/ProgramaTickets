@@ -36,6 +36,7 @@ public class TicketService {
         return ticketModel;
     }
 
-
-
+    public TicketModel getById(Long id) {
+        return repository.getById(id);
+    }
 }
